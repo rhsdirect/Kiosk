@@ -97,8 +97,9 @@
     }).then((result) => {
       console.log(result);
       if (result.isConfirmed) {
-        window.location.href = "index.html";
         sessionStorage.setItem("id", "");
+        sessionStorage.setItem("loggedIn", "")
+        window.location.href = "index.html";
       }
     });
   });
