@@ -262,7 +262,7 @@
               <div class="rizal-text">
                 <!-- <i class="fa fa-home fa-lg mb-1"></i> -->
                 OVERVIEW
-                <div>WELCOME, NAME LASTNAME!</div>
+                <div></div>
               </div>
             </li>
           </ul>
@@ -629,7 +629,7 @@
 
               for (let i = 0; i < data2.length; i++) {
                 let fname = data[data2[i]].fname;
-                let mname = data[data2[i]].mname.trim()[0];
+                let mname = data[data2[i]].mname == undefined ? "" : data[data2[i]].mname.trim()[0]; 
                 mname = mname != undefined ? mname.toUpperCase() + "." : "";
                 let lname = data[data2[i]].lname;
                 let id = data[data2[i]].id;
@@ -648,7 +648,13 @@
                   });
                   fCounter++;
                 }
+
+                if(id = sessionStorage.getItem("id")){
+                  $(".rizal-text div").text("Welcome, " + fname + "!");
+                }
               }
+
+              
 
               // Initialize ajax autocomplete:
               $("#guard-name").autocomplete({

@@ -73,6 +73,7 @@
     <link rel="stylesheet" type="text/css" href="../css/util.css" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iziToast.css" />
 
     <style type="text/css" rel="stylesheet">
       footer {
@@ -440,7 +441,7 @@
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="../vendor/select2/select2.min.js"></script>
-
+    <script src="../script/iziToast.js" defer></script>
     <script src="../vendor/daterangepicker/moment.min.js"></script>
     <script src="../vendor/daterangepicker/daterangepicker.js"></script>
 
@@ -970,7 +971,7 @@
                   let lrn = col.eq(1).text();
                   let name = col.eq(2).text();
                   let year = col.eq(3).text();
-                  // let contact = $(e.target).attr("col-email");
+                  let contact = $(e.target).attr("col-email");
 
                   let txt =
                     "Good Day!\n\nThis is to inform you that your requested document is now available for pick up. Please bring ID for verification purposes. Our office is open from Monday - Friday, 8AM - 5PM.\n\nRegards,\nAdmission";
@@ -1107,7 +1108,7 @@
 
               for (let i = 0; i < data2.length; i++) {
                 let fname = data[data2[i]].fname;
-                let mname = data[data2[i]].mname.trim()[0];
+                let mname = data[data2[i]].mname == undefined ? "" : data[data2[i]].mname.trim()[0];
                 mname = mname != undefined ? mname.toUpperCase() + "." : "";
                 let lname = data[data2[i]].lname;
                 let id = data[data2[i]].id;

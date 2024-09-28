@@ -26,6 +26,7 @@ $(document).ready(function () {
   // In the blacklist's page
   else {
     // Check if logged in first
+    // if(sessionStorage.getItem("loggedIn") != "" && sessionStorage.getItem("loggedIn") != null && !blacklist.includes(url)){
     if(sessionStorage.getItem("loggedIn") != "" && sessionStorage.getItem("loggedIn") != null){
       window.location.href = sessionStorage.getItem("previous");
     }

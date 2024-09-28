@@ -376,7 +376,7 @@
     <script src="../js/main.js"></script>
 
     <script src="../js/sweetalert2.all.min.js"></script>
-    <!-- <script src="../js/login.js"></script> -->
+    <script src="../js/login.js"></script>
     <script type="module" src="../script/app.js"></script>
     <script>
       let isKicked = false;
@@ -387,7 +387,7 @@
       } else if(kick == "false" || kick == false){
         isKicked = false;
       }
-      let url = window.location.href.split("/")[5];
+      let url = window.location.href.split("/")[(window.location.href.includes("127.0.0.1") ? 4 : 5)];
 
       if (isKicked && url == "index.html") {
         sessionStorage.setItem("kick", "false");

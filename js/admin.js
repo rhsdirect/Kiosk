@@ -93,7 +93,7 @@ $(document).ready(() => {
 
             for (let i = 0; i < data2.length; i++) {
               let fname = data[data2[i]].fname;
-              let mname = data[data2[i]].mname.trim()[0];
+              let mname = data[data2[i]].mname == undefined ? "" : data[data2[i]].mname.trim()[0];
               mname = mname != undefined ? mname.toUpperCase() : "";
               let lname = data[data2[i]].lname;
               let id = data[data2[i]].id;
@@ -218,7 +218,7 @@ $(document).ready(() => {
   let time = 0;
 
   $(document).on("keyup", (event) => {
-    let urlName = window.location.href.split("/")[4];
+    let urlName = window.location.href.split("/")[(window.location.href.includes("127.0.0.1") ? 4 : 5)];
 
     id += event.key;
     time = 0; // keep on typing to not trigger id resetter

@@ -241,11 +241,11 @@ $(document).ready(() => {
 
     for (let i = 0; i < data2.length; i++) {
       let fname = data[data2[i]].fname;
-      let mname = data[data2[i]].mname.trim()[0];
+      let mname = data[data2[i]].mname == undefined ? "" : data[data2[i]].mname.trim()[0];
       mname = mname != undefined ? mname.toUpperCase() + "." : "";
       let lname = data[data2[i]].lname;
       let id = data[data2[i]].id;
-      let role = data[data2[i]].role;
+      let role = data[data2[i]].role ? data[data2[i]].role : "";
       let year = data[data2[i]].year;
       let fullname = `${lname}, ${fname} ${mname}`;
       let fullnameID = `${lname}, ${fname} ${mname} • ${role.toUpperCase()}`;
@@ -725,11 +725,11 @@ $(document).ready(() => {
 
         for (let i = 0; i < data2.length; i++) {
           let fname = data[data2[i]].fname;
-          let mname = data[data2[i]].mname.trim()[0];
+          let mname = data[data2[i]].mname == undefined ? "" : data[data2[i]].mname.trim()[0];
           mname = mname != undefined ? mname.toUpperCase() + "." : "";
           let lname = data[data2[i]].lname;
           let id = data[data2[i]].id;
-          let role = data[data2[i]].role;
+          let role = data[data2[i]].role ? data[data2[i]].role : "";
           let year = data[data2[i]].year;
           let fullname = `${lname}, ${fname} ${mname}`;
           let fullnameID = `${lname}, ${fname} ${mname} • ${role.toUpperCase()}`;

@@ -399,12 +399,12 @@
       let isKicked = false;
       let kick = sessionStorage.getItem("kick");
       console.log(sessionStorage.getItem("kick"));
-      if (kick == "true") {
+      if(kick == "true" || kick == true){
         isKicked = true;
-      } else if (kick == "false") {
+      } else if(kick == "false" || kick == false){
         isKicked = false;
       }
-      let url = window.location.href.split("/")[4];
+      let url = window.location.href.split("/")[(window.location.href.includes("127.0.0.1") ? 4 : 5)];
 
       if (isKicked && url == "index.html") {
         sessionStorage.setItem("kick", "false");
