@@ -14,7 +14,7 @@ $(document).ready(() => {
   map.setZoom(map.getZoom() - 2);
 
   // var imageUrl = "assets/img/rhs.png"; // Update with your local image path
-  var imageUrl = "../assets/img/campus.png"; // Update with your local image path
+  var imageUrl = "https://rhsdirect.github.io/Kiosk/assets/img/Campus.png"; // Update with your local image path
   // var imageUrl = "assets/img/campus2.png"; // Update with your local image path
   var w = 1920, //1101,
       h = 1080, //851,
