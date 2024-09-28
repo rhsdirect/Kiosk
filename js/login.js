@@ -9,6 +9,24 @@ $(document).ready(function () {
   const onChildAdded = _childAdded();
   const update = _update();
 
+  let url = window.location.href.split("/")[5].split(".")[0];
+  let blacklist = [
+		"index", 
+		"staff_login",
+	];
+
+  // Do not retrieve blacklist URL
+  if(!url.includes(blacklist)){
+    sessionStorage.setItem("previous", window.location.href);
+  } 
+  // In the blacklist's page
+  else {
+    // Check if logged in first
+    if(sessionStorage.getItem("loggedIn") != "" && sessionStorage.getItem("loggedIn") != null){
+      window.location.href = sessionStorage.getItem("previous");
+    }
+  }
+
   // $("#btn_login").on("click", function (event) {
   //   login();
   // });
@@ -50,7 +68,7 @@ $(document).ready(function () {
   // }
 
   let sfTimer = setTimeout(() => {
-    if (window.location.href.split("/")[4] == "student_profile.html") {
+    if (window.location.href.split("/")[5] == "student_profile.html") {
       GetStudentGlobal().then((data) => {
         // console.log(data);
         let id = sessionStorage.getItem("id");
@@ -131,7 +149,7 @@ $(document).ready(function () {
 
   // RFID Login
   $(document).on("keyup", (event) => {
-    let urlName = window.location.href.split("/")[4];
+    let urlName = window.location.href.split("/")[5];
     let urlNames = ["login.html", "index.html"];
 
     if (urlNames.includes(urlName)) {
