@@ -1054,7 +1054,8 @@ button.accordion-button:focus {
 }
 
 .bg {
-  background: url("../assets/img/rhs_building.jpeg");
+  background: url("https://rhsdirect.github.io/Kiosk/assets/img/rhs_building.jpeg");
+  /* background: url("../assets/img/rhs_building.jpeg"); */
   background-repeat: no-repeat;
   filter: brightness(60%);
   /* backdrop-filter: brightness(80%); */
@@ -1084,7 +1085,8 @@ button.accordion-button:focus {
 }
 
 .bg-login {
-  background: url("./assets/img/rhs_building.jpeg");
+  background: url("https://rhsdirect.github.io/Kiosk/assets/img/rhs_building.jpeg");
+  /* background: url("./assets/img/rhs_building.jpeg"); */
   background-repeat: no-repeat;
   filter: brightness(80%);
   /* backdrop-filter: brightness(80%); */
@@ -1117,17 +1119,17 @@ button.accordion-button:focus {
 }
 
 .about-card {
-  background-image: url("/assets/img/about.jpg");
+  background-image: url("https://rhsdirect.github.io/Kiosk/assets/img/about.jpg");
   background-size: cover;
 }
 
 .event-card {
-  background-image: url("/assets/img/event.jpg");
+  background-image: url("https://rhsdirect.github.io/Kiosk/assets/img/event.jpg");
   background-size: cover;
 }
 
 .career-card {
-  background-image: url("/assets/img/calendar.jpg");
+  background-image: url("https://rhsdirect.github.io/Kiosk/assets/img/calendar.jpg");
 }
 
 .crd {
