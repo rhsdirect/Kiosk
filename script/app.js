@@ -517,7 +517,7 @@ $(document).ready(() => {
           // console.log(i, data[i], facilities[data[i]].length);
           // console.log("Data", data[data2[i]]);
           let fname = data[data2[i]].fname;
-          let mname = data[data2[i]].mname.trim()[0];
+          let mname = data[data2[i]].mname == undefined ? "" : data[data2[i]].mname.trim()[0];
           mname = mname != undefined ? mname.toUpperCase() + "." : "";
           let lname = data[data2[i]].lname;
           let id = data[data2[i]].id;
