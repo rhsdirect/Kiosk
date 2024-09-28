@@ -9,7 +9,7 @@ $(document).ready(function () {
   const onChildAdded = _childAdded();
   const update = _update();
 
-  let url = window.location.href.split("/")[5].split(".")[0];
+  let url = window.location.href.split("/")[(window.location.href.includes("localhost") ? 4 : 5)].split(".")[0];
   let blacklist = [
 		"index", 
 		"staff_login",
@@ -68,7 +68,7 @@ $(document).ready(function () {
   // }
 
   let sfTimer = setTimeout(() => {
-    if (window.location.href.split("/")[5] == "student_profile.html") {
+    if (window.location.href.split("/")[(window.location.href.includes("localhost") ? 4 : 5)] == "student_profile.html") {
       GetStudentGlobal().then((data) => {
         // console.log(data);
         let id = sessionStorage.getItem("id");
@@ -149,7 +149,7 @@ $(document).ready(function () {
 
   // RFID Login
   $(document).on("keyup", (event) => {
-    let urlName = window.location.href.split("/")[5];
+    let urlName = window.location.href.split("/")[(window.location.href.includes("localhost") ? 4 : 5)];
     let urlNames = ["login.html", "index.html"];
 
     if (urlNames.includes(urlName)) {
